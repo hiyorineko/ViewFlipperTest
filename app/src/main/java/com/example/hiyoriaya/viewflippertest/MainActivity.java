@@ -2,9 +2,13 @@ package com.example.hiyoriaya.viewflippertest;
 
 import android.app.Activity;
 import android.graphics.Color;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.GestureDetector;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -12,9 +16,10 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ViewFlipper;
 
-public class MainActivity extends Activity implements OnClickListener{
+public class MainActivity extends AppCompatActivity implements OnClickListener{
 
     ViewFlipper vf;
     GestureDetector gd;
@@ -125,4 +130,19 @@ public class MainActivity extends Activity implements OnClickListener{
                 break;
         }
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        Toast.makeText(this,item.getTitle(),Toast.LENGTH_SHORT).show();
+        return super.onOptionsItemSelected(item);
+    }
+
+
 }
