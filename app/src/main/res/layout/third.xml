@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="むらさき"
+        android:id="@+id/purple"
+        android:background="#d900ff"
+        android:textColor="#ffffff" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="だいだい"
+        android:id="@+id/orange"
+        android:background="#ff5e00"
+        android:textColor="#ffffff"
+        android:layout_weight="1.12" />
+
+    <Button
+        android:layout_width="144dp"
+        android:layout_height="wrap_content"
+        android:text="みずいろ"
+        android:id="@+id/cyan"
+        android:background="#00ffee"
+        android:textColor="#000000" />
+</LinearLayout>
