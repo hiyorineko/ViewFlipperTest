@@ -1,6 +1,7 @@
 package com.example.hiyoriaya.viewflippertest;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.GestureDetector;
@@ -13,7 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
-public class MainActivity extends Activity implements OnClickListener,View.OnTouchListener{
+public class MainActivity extends Activity implements OnClickListener{
 
     ViewFlipper vf;
     GestureDetector gd;
@@ -41,22 +42,14 @@ public class MainActivity extends Activity implements OnClickListener,View.OnTou
 
     public void findViews(){
         vf = (ViewFlipper)findViewById(R.id.flipper);
-        vf.setOnTouchListener(this);
         gd = new GestureDetector(this,mOnGestureListener);
         red = (Button)findViewById(R.id.red);
-        red.setOnTouchListener(this);
         blue = (Button)findViewById(R.id.blue);
-        blue.setOnTouchListener(this);
         yellow = (Button)findViewById(R.id.yellow);
-        yellow.setOnTouchListener(this);
         orange = (Button)findViewById(R.id.orange);
-        orange.setOnTouchListener(this);
         purple = (Button)findViewById(R.id.purple);
-        purple.setOnTouchListener(this);
         cyan = (Button)findViewById(R.id.cyan);
-        cyan.setOnTouchListener(this);
         green = (Button)findViewById(R.id.green);
-        green.setOnTouchListener(this);
         red.setOnClickListener(this);
         blue.setOnClickListener(this);
         yellow.setOnClickListener(this);
@@ -104,30 +97,32 @@ public class MainActivity extends Activity implements OnClickListener,View.OnTou
         switch (v.getId()){
             case R.id.red:
                 tv.setText("あか");
+                tv.setBackgroundColor(0xFFFF0000);
                 break;
             case R.id.blue:
                 tv.setText("あお");
+                tv.setBackgroundColor(0xFF002FFF);
                 break;
             case R.id.yellow:
                 tv.setText("きいろ");
+                tv.setBackgroundColor(0xFFFFEA00);
                 break;
             case R.id.cyan:
                 tv.setText("みずいろ");
+                tv.setBackgroundColor(0xFF00FFEE);
                 break;
             case R.id.orange:
                 tv.setText("だいだい");
+                tv.setBackgroundColor(0xFFFF5E00);
                 break;
             case R.id.purple:
                 tv.setText("むらさき");
+                tv.setBackgroundColor(0xFFD900FF);
                 break;
             case R.id.green:
                 tv.setText("みどり");
+                tv.setBackgroundColor(0xFF26FF00);
                 break;
         }
-    }
-
-    @Override
-    public boolean onTouch(View v, MotionEvent event) {
-        return gd.onTouchEvent(event);
     }
 }
